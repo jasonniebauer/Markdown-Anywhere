@@ -64,7 +64,23 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
       var textInput = document.getElementById('textInput');
-      textInput.value = '# DocHub\n\nA portable markdown editor.'
+      textInput.value = 
+        '# DocHub\n\n' + 
+        'A progressive web app for writing markdown.\n\n' +
+        '# Heading 1\n' +
+        '## Heading 2\n' +
+        '### Heading 3\n' +
+        '#### Heading 4\n' +
+        '##### Heading 5\n' +
+        '###### Heading 6\n\n' +
+        'Type `*Italic*` to get *Italic*\n\n' +
+        'Type `**Bold**` to get **Bold**\n\n' +
+        'Type `[Link](http://a.com)` to get a [Link](http://a.com)\n\n' +
+        'Type `![Image](http://url/a.png)` to get ![Image](http://url/a.png)\n\n' +
+        'Type `> Blockquote` to get:\n> Blockquote\n\n' +
+        '* List\n* List\n*List\n\n' +
+        '1. List\n2. List\n3. List\n\n'
+
       var preview = document.getElementById('preview');
 
       function updatePreview(){
@@ -85,6 +101,7 @@
       var docTitle = document.getElementById('docTitle');
       var previewIcon = document.getElementById('previewIcon');
       var cancelPreview = document.getElementById('cancelPreview');
+      var container = document.querySelector('.container');
       var toolbar = document.getElementById('toolbar');
       var previewIcon = document.getElementById('previewIcon');
 
@@ -94,6 +111,7 @@
         textInput.classList.toggle('hide');
         toolbar.classList.toggle('hide');
         cancelPreview.classList.toggle('hide');
+        // container.style.height = 'calc(100% - 56px)'
         
         textInput.style.display = 'none';
         preview.style.display = 'block'
