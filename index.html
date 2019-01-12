@@ -14,7 +14,7 @@
   </head>
   <body>
     <nav class="navbar flex items-center justify-between mx-auto">
-      <span id="backToMenu" class="flex items-center" style="color:#3578e5;height: 56px;width: 56px;">
+      <span id="backToDocs" class="flex items-center" style="color:#3578e5;height: 56px;width: 56px;">
         <i class="fas fa-angle-left" style="margin-left:12px;"></i>
       </span>
       <p id="appName" class="app-title">DocHub</p>
@@ -31,6 +31,9 @@
       </div> -->
     </nav>
     <section id="container" class="container flex items-stretch">
+      <div id="documents">
+
+      </div>
       <div id="editor" class="editor flex flex-column">
         <textarea id="textInput" class="border-none" autofocus></textarea>
         <div id="toolbar" class="toolbar flex justify-around items-center">
@@ -61,7 +64,7 @@
           </a>
         </div>
       </div>
-      <div id="preview" class="preview-container overflow-auto"></div>
+      <div id="preview" class="preview-container md-show overflow-auto"></div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
@@ -95,11 +98,13 @@
         if (event.target.tagName.toLowerCase() == 'textarea') {
           updatePreview();
         }
-      }, false);
+      });
+
 
       // toolbar
       // var button = document.querySelector('.button');
       var appName = document.getElementById('appName');
+      var backToDocs = document.getElementById('backToDocs');
       var docTitle = document.getElementById('docTitle');
       var previewIcon = document.getElementById('previewIcon');
       var cancelPreview = document.getElementById('cancelPreview');
@@ -108,29 +113,27 @@
       var toolbar = document.getElementById('toolbar');
       var previewIcon = document.getElementById('previewIcon');
 
-      previewIcon.addEventListener('click', function () {
+      function togglePreview(){
         appName.classList.toggle('hide');
         previewIcon.classList.toggle('hide');
         editor.classList.toggle('hide');
         textInput.classList.toggle('hide');
         toolbar.classList.toggle('hide');
         cancelPreview.classList.toggle('hide');
-        // container.style.height = 'calc(100% - 56px)'
+        textInput.classList.toggle('md-show');
+        preview.classList.toggle('md-show');
+      }
+
+      backToDocs.addEventListener('click', function(){
         
-        textInput.style.display = 'none';
-        preview.style.display = 'block'
-      }, false);
+      });
+
+      previewIcon.addEventListener('click', function() {
+        togglePreview();
+      });
 
       cancelPreview.addEventListener('click', function(){
-        appName.classList.toggle('hide');
-        previewIcon.classList.toggle('hide');
-        editor.classList.toggle('hide');
-        textInput.classList.toggle('hide');
-        toolbar.classList.toggle('hide');
-        cancelPreview.classList.toggle('hide');
-        
-        textInput.style.display = 'block';
-        preview.style.display = 'none'
+        togglePreview();
       });
     </script>
     <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>

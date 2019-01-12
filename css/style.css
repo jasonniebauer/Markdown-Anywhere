@@ -3,6 +3,11 @@ body {
   height: 100%;
 }
 
+/* utility class */
+.md-show {
+  display: none;
+}
+
 .navbar {
   height: 56px;
   background: #f2f2f2;
@@ -63,7 +68,6 @@ textarea {
   background: #ffffff;
   height: 100%;
   color: #222222;
-  display: none;
   padding-left: 1rem;
   padding-right: 1rem;
   width: 100%;
@@ -84,11 +88,16 @@ textarea {
   color: #3578e5;
 }
 
+
 @media (min-width: 40em) {
   
 }
 
 @media (min-width: 52em) {
+  .md-show {
+    display: block;
+  }
+
   .navbar {
     display: -webkit-box;
     display: -ms-flexbox;
