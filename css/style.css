@@ -8,6 +8,12 @@ body {
   display: none;
 }
 
+.appbar {
+  max-width: 1012px;
+  height: 56px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
 .navbar {
   height: 56px;
   background: #f2f2f2;
@@ -16,8 +22,7 @@ body {
   position: relative;
 }
 
-.app-title {
-  display: none;
+#appName {
   margin: 0;
   font-weight: 700;
 }
@@ -26,13 +31,17 @@ body {
   font-size: 24px;
 }
 
-.doc-title {
+#docTitle {
   font-weight: 700;
   text-align: center;
 }
 
-.container {
+#appContainer {
   height: calc(100% - 56px);
+}
+
+#documents {
+  padding: 1rem;
 }
 
 .editor {
@@ -98,6 +107,10 @@ textarea {
     display: block;
   }
 
+  .appbar {
+    height: 64px;
+  }
+
   .navbar {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -105,15 +118,11 @@ textarea {
     height: 64px;
   }
 
-  .app-title {
-    display: none;
-  }
-
   #backToDocs {
     font-size: 32px;
   }
 
-  .doc-title {
+  #docTitle {
     text-align: left;
   }
 
@@ -121,7 +130,7 @@ textarea {
     display: none;
   }
 
-  .container {
+  #appContainer {
     height: calc(100% - 64px);
   }
 

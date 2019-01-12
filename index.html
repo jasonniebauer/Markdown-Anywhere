@@ -13,29 +13,33 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <nav class="navbar flex items-center justify-between mx-auto">
-      <span id="backToDocs" class="flex items-center" style="color:#3578e5;height: 56px;width: 56px;">
-        <i class="fas fa-angle-left" style="margin-left:12px;"></i>
-      </span>
-      <p id="appName" class="app-title">DocHub</p>
-      <p id="docTitle" class="doc-title flex-auto">DocTitle.md</p>
-      <span id="previewIcon" class="preview-icon flex justify-center items-center" style="font-size:20px;color:#3578e5;height: 56px;width: 56px;">
-        <i class="far fa-eye"></i>
-      </span>
-      <span id="cancelPreview" class="hide flex justify-center items-center" style="font-size:20px;color:#3578e5;height: 56px;width: 56px;">
-        <i class="far fa-eye-slash"></i>
-      </span>
-      <!-- <div>
-        <a class="btn">Sign in</a>
-        <a class="btn btn-primary">Sign up</a>
-      </div> -->
-    </nav>
-    <section id="container" class="container flex items-stretch">
-      <div id="documents">
-
+    <header style="box-shadow: inset 0 -1px 0 0px rgba(0,0,0,.125);">
+      <div id="appBar" class="appbar flex justify-between items-center">
+        <p id="appName">DocHub</p>
+        <a id="startButton" class="btn btn-primary">Get started</a>
       </div>
-      <div id="editor" class="editor flex flex-column">
-        <textarea id="textInput" class="border-none" autofocus></textarea>
+      <nav id="navBar" class="hide navbar flex justify-between items-center mx-auto">
+        <span id="backToDocs" class="flex items-center" style="color:#3578e5;height: 56px;width: 56px;">
+          <i class="fas fa-angle-left" style="margin-left:12px;"></i>
+        </span>
+        <p id="docTitle" class="flex-auto">DocTitle.md</p>
+        <span id="previewIcon" class="preview-icon flex justify-center items-center" style="font-size:20px;color:#3578e5;height: 56px;width: 56px;">
+          <i class="far fa-eye"></i>
+        </span>
+        <span id="cancelPreview" class="hide flex justify-center items-center" style="font-size:20px;color:#3578e5;height: 56px;width: 56px;">
+          <i class="far fa-eye-slash"></i>
+        </span>
+      </nav>
+    </header>
+    <section id="appContainer" class="flex items-stretch">
+      <div id="landing" class="fill p-2" style="background:#f2f2f2;">
+        <h1>Landing page</h1>
+      </div>
+      <div id="documents" class="hide">
+        <h1>Documents</h1>
+      </div>
+      <div id="editor" class="hide editor flex flex-column">
+        <textarea id="textInput" class="border-none"></textarea>
         <div id="toolbar" class="toolbar flex justify-around items-center">
           <a class="flex justify-center items-center toolbar-icon">
             <span>
@@ -102,20 +106,26 @@
       });
 
 
-      // toolbar
-      // var button = document.querySelector('.button');
-      var appName = document.getElementById('appName');
+      // app bar variables
+      var appBar = document.getElementById('appBar');
+      var startButton = document.getElementById('startButton');
+
+      var navBar = document.getElementById('navBar');
       var backToDocs = document.getElementById('backToDocs');
       var docTitle = document.getElementById('docTitle');
       var previewIcon = document.getElementById('previewIcon');
       var cancelPreview = document.getElementById('cancelPreview');
-      var container = document.getElementById('container');
+
+      // container variables
+      var appContainer = document.getElementById('appContainer');
+      var landing = document.getElementById('landing');
       var editor = document.getElementById('editor');
+      var textInput = document.getElementById('textInput');
+
+      // toolbar variables
       var toolbar = document.getElementById('toolbar');
-      var previewIcon = document.getElementById('previewIcon');
 
       function togglePreview(){
-        appName.classList.toggle('hide');
         previewIcon.classList.toggle('hide');
         editor.classList.toggle('hide');
         textInput.classList.toggle('hide');
@@ -125,8 +135,19 @@
         preview.classList.toggle('md-show');
       }
 
+      startButton.addEventListener('click', function(){
+        appBar.classList.toggle('hide');
+        navBar.classList.toggle('hide');
+        landing.classList.toggle('hide');
+        editor.classList.toggle('hide');
+        textInput.focus();
+      });
+
       backToDocs.addEventListener('click', function(){
-        
+        appBar.classList.toggle('hide');
+        navBar.classList.toggle('hide');
+        landing.classList.toggle('hide');
+        editor.classList.toggle('hide');
       });
 
       previewIcon.addEventListener('click', function() {
