@@ -27,7 +27,11 @@ body {
 }
 
 .container {
-  height: calc(100% - 112px);
+  height: calc(100% - 56px);
+}
+
+.editor {
+  width: 100%;
 }
 
 textarea {
@@ -45,9 +49,7 @@ textarea {
   font-size: 18px;
   background: #222;
   color:#c8c8c8;
-  min-height:100%;
-  max-height:100%;
-  min-width:340px;
+  height: calc(100% - 56px);
   width: 100%;
   padding-top: 1rem;
   padding-right: 1rem;
@@ -114,9 +116,13 @@ textarea {
     height: calc(100% - 64px);
   }
 
+  .editor {
+    width: 50%;
+  }
+
   textarea {
     padding: 1rem;
-    width: 50%;
+    height: 100%;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;

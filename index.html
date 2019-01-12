@@ -30,37 +30,39 @@
         <a class="btn btn-primary">Sign up</a>
       </div> -->
     </nav>
-    <section class="container flex items-stretch">
-      <textarea id="textInput" class="border-none" autofocus></textarea>
+    <section id="container" class="container flex items-stretch">
+      <div id="editor" class="editor flex flex-column">
+        <textarea id="textInput" class="border-none" autofocus></textarea>
+        <div id="toolbar" class="toolbar flex justify-around items-center">
+          <a class="flex justify-center items-center toolbar-icon">
+            <span>
+              <i class="fas fa-hashtag"></i>
+            </span>
+          </a>
+          <a class="flex justify-center items-center toolbar-icon">
+            <span>
+              <i class="fas fa-link"></i>
+            </span>
+          </a>
+          <a class="flex justify-center items-center toolbar-icon">
+            <span>
+              <i class="far fa-image"></i>
+            </span>
+          </a>
+          <a class="flex justify-center items-center toolbar-icon">
+            <span>
+              <i class="fas fa-list-ul"></i>
+            </span>
+          </a>
+          <a class="flex justify-center items-center toolbar-icon">
+            <span>
+              <i class="fas fa-table"></i>
+            </span>
+          </a>
+        </div>
+      </div>
       <div id="preview" class="preview-container overflow-auto"></div>
     </section>
-    <div id="toolbar" class="toolbar flex justify-around items-center">
-      <a class="flex justify-center items-center toolbar-icon">
-        <span>
-          <i class="fas fa-hashtag"></i>
-        </span>
-      </a>
-      <a class="flex justify-center items-center toolbar-icon">
-        <span>
-          <i class="fas fa-link"></i>
-        </span>
-      </a>
-      <a class="flex justify-center items-center toolbar-icon">
-        <span>
-          <i class="far fa-image"></i>
-        </span>
-      </a>
-      <a class="flex justify-center items-center toolbar-icon">
-        <span>
-          <i class="fas fa-list-ul"></i>
-        </span>
-      </a>
-      <a class="flex justify-center items-center toolbar-icon">
-        <span>
-          <i class="fas fa-table"></i>
-        </span>
-      </a>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
       var textInput = document.getElementById('textInput');
@@ -101,13 +103,15 @@
       var docTitle = document.getElementById('docTitle');
       var previewIcon = document.getElementById('previewIcon');
       var cancelPreview = document.getElementById('cancelPreview');
-      var container = document.querySelector('.container');
+      var container = document.getElementById('container');
+      var editor = document.getElementById('editor');
       var toolbar = document.getElementById('toolbar');
       var previewIcon = document.getElementById('previewIcon');
 
       previewIcon.addEventListener('click', function () {
         appName.classList.toggle('hide');
         previewIcon.classList.toggle('hide');
+        editor.classList.toggle('hide');
         textInput.classList.toggle('hide');
         toolbar.classList.toggle('hide');
         cancelPreview.classList.toggle('hide');
@@ -120,6 +124,7 @@
       cancelPreview.addEventListener('click', function(){
         appName.classList.toggle('hide');
         previewIcon.classList.toggle('hide');
+        editor.classList.toggle('hide');
         textInput.classList.toggle('hide');
         toolbar.classList.toggle('hide');
         cancelPreview.classList.toggle('hide');
