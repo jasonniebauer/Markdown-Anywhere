@@ -38,37 +38,10 @@
       <div id="documents" class="hide">
         <h1>Documents</h1>
       </div>
-      <div id="editor" class="hide editor flex flex-column">
+      <div id="editor" class="hide editor flex">
         <textarea id="textInput" class="border-none"></textarea>
-        <div id="toolbar" class="toolbar flex justify-around items-center">
-          <a class="flex justify-center items-center toolbar-icon">
-            <span>
-              <i class="fas fa-hashtag"></i>
-            </span>
-          </a>
-          <a class="flex justify-center items-center toolbar-icon">
-            <span>
-              <i class="fas fa-link"></i>
-            </span>
-          </a>
-          <a class="flex justify-center items-center toolbar-icon">
-            <span>
-              <i class="far fa-image"></i>
-            </span>
-          </a>
-          <a class="flex justify-center items-center toolbar-icon">
-            <span>
-              <i class="fas fa-list-ul"></i>
-            </span>
-          </a>
-          <a class="flex justify-center items-center toolbar-icon">
-            <span>
-              <i class="fas fa-table"></i>
-            </span>
-          </a>
-        </div>
+        <div id="preview" class="md-show preview-container overflow-auto"></div>
       </div>
-      <div id="preview" class="preview-container md-show overflow-auto"></div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
@@ -121,17 +94,25 @@
       var landing = document.getElementById('landing');
       var editor = document.getElementById('editor');
       var textInput = document.getElementById('textInput');
+      var preview = document.getElementById('preview');
 
-      // toolbar variables
-      var toolbar = document.getElementById('toolbar');
+
+      // window.addEventListener('resize', function(){
+      //   var element = document.getElementById('editor');
+      //   var elementWidth = window.getComputedStyle(element).width;
+      //   elementWidth = elementWidth.slice(0,3);
+
+      //   if(elementWidth >= 832){
+      //     preview.className -= 'hide';
+      //   } else {
+      //     preview.className += 'hide';
+      //   }
+      // });
 
       function togglePreview(){
         previewIcon.classList.toggle('hide');
-        editor.classList.toggle('hide');
-        textInput.classList.toggle('hide');
-        toolbar.classList.toggle('hide');
         cancelPreview.classList.toggle('hide');
-        textInput.classList.toggle('md-show');
+        textInput.classList.toggle('hide');
         preview.classList.toggle('md-show');
       }
 
