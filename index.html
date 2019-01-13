@@ -96,19 +96,6 @@
       var textInput = document.getElementById('textInput');
       var preview = document.getElementById('preview');
 
-
-      // window.addEventListener('resize', function(){
-      //   var element = document.getElementById('editor');
-      //   var elementWidth = window.getComputedStyle(element).width;
-      //   elementWidth = elementWidth.slice(0,3);
-
-      //   if(elementWidth >= 832){
-      //     preview.className -= 'hide';
-      //   } else {
-      //     preview.className += 'hide';
-      //   }
-      // });
-
       function togglePreview(){
         previewIcon.classList.toggle('hide');
         cancelPreview.classList.toggle('hide');
@@ -121,8 +108,13 @@
         navBar.classList.toggle('hide');
         landing.classList.toggle('hide');
         editor.classList.toggle('hide');
-        textInput.focus();
+        // textInput.focus();
       });
+
+      appBar.classList.toggle('hide');
+      navBar.classList.toggle('hide');
+      landing.classList.toggle('hide');
+      editor.classList.toggle('hide');
 
       backToDocs.addEventListener('click', function(){
         appBar.classList.toggle('hide');
