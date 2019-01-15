@@ -52,13 +52,10 @@ textarea {
   border: none;
   overflow: auto;
   outline: none;
-
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-
   resize: none;
-
   font-family: "Input Mono", "SF Mono", Consolas, monospace;
   font-size: 16px;
   background: #222;
