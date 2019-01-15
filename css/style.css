@@ -59,7 +59,7 @@ textarea {
 
   resize: none;
 
-  font-family: monospace;
+  font-family: "Input Mono", "SF Mono", Consolas, monospace;
   font-size: 16px;
   background: #222;
   color:#c8c8c8;
