@@ -8,40 +8,42 @@ body {
   display: none;
 }
 
-.appbar {
-  max-width: 1012px;
+header {
   height: 56px;
-  padding: 0 1rem;
-  margin: 0 auto;
+  box-shadow: inset 0 -1px 0 0px rgba(0,0,0,.125);
 }
-.navbar {
-  height: 56px;
+
+.appbar-brand {
+  font-weight: 700;
+  color: #222222;
+  padding: 1rem;
+}
+
+a.appbar-brand:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.preview-icon {
+  font-size: 20px;
+  color: #222;
+  height: 36px;
+  width: 36px;
+  margin-right: 0.5rem;
+}
+
+.preview-icon:hover {
+  cursor: pointer;
+}
+
+.preview-icon.active {
   background: #f2f2f2;
-  border-bottom: 1px solid #c8c8c8;
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12);
-  position: relative;
-}
-
-#appName {
-  margin: 0;
-  font-weight: 700;
-}
-
-#backToDocs {
-  font-size: 24px;
-}
-
-#docTitle {
-  font-weight: 700;
-  text-align: center;
+  color: #3578e5;
+  border-radius: 3px;
 }
 
 #appContainer {
   height: calc(100% - 56px);
-}
-
-#documents {
-  padding: 1rem;
 }
 
 .editor {
@@ -62,10 +64,7 @@ textarea {
   color:#c8c8c8;
   height: 100%;
   width: 100%;
-  padding-top: 0;
-  padding-right: 1rem;
-  padding-bottom: 0;
-  padding-left: 1rem;
+  padding: 1rem;
   border-radius: 0;
 }
 
@@ -95,7 +94,7 @@ textarea {
 
 
 @media (min-width: 40em) {
-  
+
 }
 
 @media (min-width: 52em) {
@@ -103,7 +102,7 @@ textarea {
     display: block;
   }
 
-  .appbar {
+  header {
     height: 64px;
   }
 
@@ -114,12 +113,8 @@ textarea {
     height: 64px;
   }
 
-  #backToDocs {
-    font-size: 32px;
-  }
-
-  #docTitle {
-    text-align: left;
+  .navbar-brand {
+    font-size: 1.125rem;
   }
 
   .preview-icon {
