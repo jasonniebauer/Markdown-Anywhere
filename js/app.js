@@ -28,8 +28,8 @@ editor.addEventListener('input', function (event) {
 
 // Set default markdown
 editor.value =
-  '# DocHub\n\n' + 
-  'A web app for writing markdown.\n\n' +
+  '# Markdown Anywhere\n\n' + 
+  'A progressive web app powered Markdown editor.\n\n' +
   '# Heading 1\n' +
   '## Heading 2\n' +
   '### Heading 3\n' +
