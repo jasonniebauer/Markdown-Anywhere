@@ -2,6 +2,7 @@
 const appContainer = document.getElementById('appContainer');
 const editor = document.getElementById('editor');
 const previewContainer = document.getElementById('previewContainer');
+const previewButton = document.getElementById('previewButton');
 const previewIcon = document.getElementById('previewIcon');
 
 // Define global funcs
@@ -10,13 +11,14 @@ function updatePreview(){
 }
 
 function togglePreview(){
+  previewButton.classList.toggle('active');
   previewIcon.classList.toggle('active');
   editor.classList.toggle('hide');
   previewContainer.classList.toggle('md-show');
 }
 
 // Listen for events
-previewIcon.addEventListener('click', function() {
+previewButton.addEventListener('click', function() {
   togglePreview();
 });
 
@@ -42,6 +44,6 @@ editor.value =
   '* List\n* List\n* List\n\n' +
   '1. List\n2. List\n3. List\n\n';
 
-// Initialize
+// Initialize app
 const md = window.markdownit();
 updatePreview();

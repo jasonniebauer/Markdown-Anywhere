@@ -24,22 +24,27 @@ a.appbar-brand:hover {
   text-decoration: none;
 }
 
-.preview-icon {
-  font-size: 20px;
-  color: #222;
+.preview-button {
   height: 36px;
   width: 36px;
   margin-right: 0.5rem;
 }
 
-.preview-icon:hover {
+.preview-button:hover {
   cursor: pointer;
 }
 
-.preview-icon.active {
+.preview-button.active {
   background: #f2f2f2;
-  color: #3578e5;
   border-radius: 3px;
+}
+
+.preview-icon {
+  fill: #222222;
+}
+
+.preview-icon.active {
+  fill: #3578e5;
 }
 
 #appContainer {
